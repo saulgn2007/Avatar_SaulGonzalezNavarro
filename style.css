@@ -1,9 +1,9 @@
 :root {
-  --monster-color: #a29bfe;    /* Color de piel */
-  --eye-size: 40px;            /* Tamaño de ojos */
-  --antenna-height: 50px;      /* Altura de antena */
-  --mouth-width: 60px;         /* Ancho de boca */
-  --bg-color: #f0f2f5;         /* Color de fondo de la web */
+  --monster-color: grey;    /* Color de piel */ 
+  --eye-size: 60px;            /* Tamaño de ojos */ 
+  --antenna-height: 200px;      /* Altura de antena */ 
+  --mouth-width: 30px;         /* Ancho de boca */   
+  --bg-color: #6a8ab9;         /* Color de fondo de la web */ 
 }
 
 /* ESTRUCTURA DEL MONSTRUO  */
@@ -37,9 +37,9 @@ body {
   content: '';
   position: absolute;
   top: -10px;
-  left: -5px;
-  width: 20px;
-  height: 20px;
+  left: -9px; /* Ajustamos la posicion de la bola de la antena */
+  width: 30px; /* Cambiamos el ancho de la bola de la antena */
+  height: 30px; /* Cambiamos la altura de la bola de la antena */
   background-color: var(--monster-color);
   border-radius: 50%;
   filter: brightness(1.2); 
@@ -62,12 +62,12 @@ body {
 .eye {
   width: var(--eye-size);
   height: var(--eye-size);
-  background-color: white;
+  background-color: rgb(223, 72, 72); /* Cambiamos el color de fodo de los ojos */
   border-radius: 50%;
   display: inline-block;
-  margin: 10px;
+  margin: 0px;   /* Cambiamos la distancia entre los ojos */
   position: relative;
-}
+} 
 
 /* pseudo elementos. After inserta contenido justo después del contenido real del elemento.*/
 /* Lo creamos para hacer el cículo negro del ojo */
@@ -75,17 +75,17 @@ body {
   content: '';
   width: 50%;
   height: 50%;
-  background-color: #2d3436;
+  background-color: #000000; /* Cambiamos el color del ojo negro */
   border-radius: 50%;
   position: absolute;
-  top: 25%;
-  left: 25%;
+  top: 2%; /* Cambiamos la posición vertical del ojo */
+  left: 2%; /* Cambiamos la posición horizontal del ojo */
 }
 
 /* La boca usa la variable de ancho */
 .mouth {
   width: var(--mouth-width);
-  height: 10px;
+  height: 100px; /* Cambiamos la altura de la boca */
   background-color: #2d3436;
   border-radius: 20px;
   margin-top: 20px;
