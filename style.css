@@ -1,0 +1,111 @@
+:root {
+  --monster-color: #a29bfe;    /* Color de piel */
+  --eye-size: 40px;            /* Tamaño de ojos */
+  --antenna-height: 50px;      /* Altura de antena */
+  --mouth-width: 60px;         /* Ancho de boca */
+  --bg-color: #f0f2f5;         /* Color de fondo de la web */
+}
+
+/* ESTRUCTURA DEL MONSTRUO  */
+body {
+  background-color: var(--bg-color);
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+.monster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* La Antena usa la variable de altura */
+.antenna {
+  width: 10px;
+  height: var(--antenna-height);
+  background-color: var(--monster-color);
+  border-radius: 5px 5px 0 0;
+  position: relative;
+}
+/* pseudo elementos. After inserta contenido justo después del contenido real del elemento.*/
+/* Lo creamos para hacer la bola de la antena */
+
+.antenna::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--monster-color);
+  border-radius: 50%;
+  filter: brightness(1.2); 
+}
+
+/* El Cuerpo usa el color de piel */
+.body {
+  width: 200px;
+  height: 220px;
+  background-color: var(--monster-color);
+  border-radius: 80px 80px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 0 rgba(0,0,0,0.1);
+}
+
+/* Los ojos usan la variable de tamaño */
+.eye {
+  width: var(--eye-size);
+  height: var(--eye-size);
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 10px;
+  position: relative;
+}
+
+/* pseudo elementos. After inserta contenido justo después del contenido real del elemento.*/
+/* Lo creamos para hacer el cículo negro del ojo */
+.eye::before {
+  content: '';
+  width: 50%;
+  height: 50%;
+  background-color: #2d3436;
+  border-radius: 50%;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}
+
+/* La boca usa la variable de ancho */
+.mouth {
+  width: var(--mouth-width);
+  height: 10px;
+  background-color: #2d3436;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.controls {
+  margin-top: 40px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+span::before {
+  content: "$"; /* Añade el símbolo antes */
+  color: green;
+}
+
+span::after {
+  content: " (Oferta)"; /* Añade el texto después */
+  font-size: 0.8rem;
+  color: red;
+}
